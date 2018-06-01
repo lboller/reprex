@@ -1,4 +1,4 @@
-Package: reprex
+Package: reprexmod
 Title: Prepare Reproducible Example Code for Sharing
 Version: 0.2.0
 Authors@R: c(

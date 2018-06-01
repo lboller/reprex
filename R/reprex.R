@@ -364,16 +364,23 @@ reprex <- function(x = NULL,
 }
 
 reprex_ <- function(input, std_out_err = NULL) {
-  callr::r_safe(
-    function(input) {
-      options(keep.source = TRUE)
-      rmarkdown::render(input, quiet = TRUE, envir = globalenv())
-    },
-    args = list(input = input),
-    spinner = interactive(),
-    stdout = std_out_err,
-    stderr = std_out_err
+  # callr::r_safe(
+  #   function(input) {
+  knitr::opts_chunk$set(
+    comment = "#>",
+    echo = TRUE,
+    fig.pos = "H",
+    message = TRUE,
+    warning = TRUE
   )
+  options(keep.source = TRUE)
+  rmarkdown::render(input, quiet = TRUE, envir = globalenv())
+  # },
+  # args = list(input = input),
+  # spinner = interactive(),
+  # stdout = std_out_err,
+  # stderr = std_out_err
+  # )
 }
 
 convert_md_to_r <- function(lines, comment = "#>") {

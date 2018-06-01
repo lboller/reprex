@@ -1,4 +1,4 @@
-# reprex 0.2.0
+# reprexmod 0.2.0
 
 reprex has a website: <http://reprex.tidyverse.org>. It includes a contributed article from @njtierney (#103).
 
